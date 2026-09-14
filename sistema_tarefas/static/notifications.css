@@ -1,4 +1,0 @@
-/* =====================================================
-   NOTIFICAÇÕES
-   ===================================================== */
-.notification-list { display: grid; gap: 10px; max-width: 900px; }.notification-list a { position: relative; padding: 17px 19px 17px 23px; color: inherit; background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--orange); border-radius: var(--radius-sm); text-decoration: none; box-shadow: var(--shadow-sm); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }.notification-list a:hover { transform: translateX(3px); border-color: #e2a77b; box-shadow: var(--shadow-md); }.notification-list small, .log small { display: block; margin-top: 5px; color: #9a8d84; }
