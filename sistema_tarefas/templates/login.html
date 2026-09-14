@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Entrar</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='login.css') }}" rel="stylesheet">
+<script>document.documentElement.dataset.theme=localStorage.getItem('tarefas-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');</script></head>
+<body class="login-page">
+  <section class="login-box"><button class="theme-toggle login-theme" type="button" data-theme-toggle aria-pressed="false">Modo escuro</button>
+    <img class="login-logo" src="{{ url_for('static', filename='logo-sitio-agar.png') }}" alt="Associação Sítio Agar">
+
+    <h1>Bem-vindo</h1>
+    <p>Entre para ver suas tarefas.</p>
+
+    {% with messages = get_flashed_messages() %}
+      {% for message in messages %}
+        <div class="login-alert" role="alert">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+
+    <form method="post">
+      <label for="username">Usuário</label>
+      <input id="username" name="username" autocomplete="username" required autofocus>
+
+      <label for="password">Senha</label>
+      <input id="password" type="password" name="password" autocomplete="current-password" required>
+
+      <button type="submit">ENTRAR</button>
+    </form>
+  </section>
+<script src="{{ url_for('static', filename='app.js') }}"></script></body>
+</html>
